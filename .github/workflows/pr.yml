@@ -25,8 +25,8 @@ jobs:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - name: Install dependencies by running Pkg.instantiate()
-        run: julia --project=.ci/ .ci/startup.jl'
+        run: julia --project=.ci/ .ci/startup.jl
       - name: AutoMerge.run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: julia --project=.ci/ pr.jl
+        run: julia --project=.ci/ .ci/pr.jl

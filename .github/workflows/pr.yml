@@ -24,7 +24,7 @@ jobs:
           arch: ${{ matrix.arch }}
       - name: Install dependencies by running Pkg.instantiate()
         run: julia --project=.ci/ .ci/startup.jl
-      - name: AutoMerge.run
+      - name: PR.run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: julia --project=.ci/ .ci/pr.jl
+        run: julia --project=.ci/ -e 'import DashComponentsBuilder as DCB; DCB.pull_request_ci()'

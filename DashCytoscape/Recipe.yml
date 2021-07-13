@@ -1,0 +1,5 @@
+name: "DashCytoscape"
+version: "0.2.0"
+py_package: "dash_cytoscape"
+type: pypi
+prefix: "dcy"

@@ -27,4 +27,5 @@ jobs:
       - name: PR.run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: julia --project=.ci/ -e 'import DashComponentsBuilder as DCB; DCB.pull_request_ci()'
+        run: julia --project=.ci/ ./ci/pr.jl
+        shell: bash

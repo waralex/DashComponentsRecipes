@@ -1,10 +1,11 @@
-name: PR
+name: PR_OPENED
 on:
   pull_request:
+    types: [opened]
     branches:
       - main
 jobs:
-  PR:
+  check_add_labels:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     strategy:
@@ -27,5 +28,5 @@ jobs:
       - name: PR.run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: julia --project=.ci/ .ci/pr.jl
+        run: julia --project=.ci/ .ci/pr_opened.jl
         shell: bash

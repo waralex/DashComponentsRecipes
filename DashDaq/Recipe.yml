@@ -1,5 +1,0 @@
-name: "DashDaq"
-version: "0.5.0"
-py_package: "dash_daq"
-type: pypi
-prefix: "daq"

@@ -1,0 +1,5 @@
+name: "DashBootstrapComponents"
+version: "0.13.0"
+py_package: "dash_bootstrap_components"
+type: pypi
+prefix: "dbc"

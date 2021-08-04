@@ -29,5 +29,6 @@ jobs:
       - name: PR.run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_TOKEN: ${{ secrets.DCB_GITHUB_TOKEN }}
         run: julia --project=.ci/ .ci/pr_merged.jl
         shell: bash

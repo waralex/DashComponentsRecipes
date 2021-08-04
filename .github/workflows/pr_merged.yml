@@ -24,6 +24,10 @@ jobs:
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
+      - name: Set git username
+        run: git config --global user.name "waralex"
+      - name: Set git email
+        run: git config --global user.email "waralex@gmail.com"
       - name: Install dependencies by running Pkg.instantiate()
         run: julia --project=.ci/ .ci/startup.jl
       - name: PR.run
